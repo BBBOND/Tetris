@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tetris</string>
+    <string name="up">Up</string>
+    <string name="left">LEFT</string>
+    <string name="right">RIGHT</string>
+    <string name="down">DOWN</string>
+    <string name="start">START</string>
+    <string name="pause">PAUSE</string>
+</resources>
