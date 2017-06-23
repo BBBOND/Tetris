@@ -7,4 +7,8 @@
     <string name="down">DOWN</string>
     <string name="start">START</string>
     <string name="pause">PAUSE</string>
+    <string name="resume">CONTINUE</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="long_press_to_start">Long press to Start</string>
+    <string name="next">NEXT</string>
 </resources>

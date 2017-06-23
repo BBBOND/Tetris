@@ -6,4 +6,10 @@
     <string name="down">下</string>
     <string name="start">开始</string>
     <string name="pause">暂停</string>
+    <string name="resume">继续</string>
+    <string name="game_over">游戏结束</string>
+    <string name="long_press_to_start">长按开始游戏</string>
+    <string name="next">下一块</string>
+    <string name="max_score">最高分数</string>
+    <string name="current_score">当前分数</string>
 </resources>

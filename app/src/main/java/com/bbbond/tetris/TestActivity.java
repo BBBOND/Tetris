@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,5 +44,7 @@ public class TestActivity extends AppCompatActivity {
         for (int i = size; i > 0; i--) {
             i++;
         }
+
+        Toast.makeText(TestActivity.this, "", Toast.LENGTH_SHORT).show();
     }
 }
