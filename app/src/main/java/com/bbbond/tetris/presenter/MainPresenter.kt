@@ -36,6 +36,7 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
 
     private var isPause: Boolean = false
     private var isOver: Boolean = false
+    private var isStart: Boolean = false
     private var downThread: Thread? = null
 
     override fun initDate(xWidth: Int) {
@@ -149,19 +150,19 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
     override fun handleClick(id: Int) {
         when (id) {
             R.id.btnDown -> {
-                if (isPause || isOver) return
+                if (isPause || isOver || !isStart) return
                 moveBottom()
             }
             R.id.btnLeft -> {
-                if (isPause || isOver) return
+                if (isPause || isOver || !isStart) return
                 move(-1, 0)
             }
             R.id.btnRight -> {
-                if (isPause || isOver) return
+                if (isPause || isOver || !isStart) return
                 move(1, 0)
             }
             R.id.btnUp -> {
-                if (isPause || isOver) return
+                if (isPause || isOver || !isStart) return
                 rotate()
             }
             R.id.btnStart -> {
@@ -170,6 +171,14 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
             R.id.btnPause -> {
                 pauseGame()
             }
+            R.id.btnFastDown -> {
+                if (isPause || isOver || !isStart) return
+                // 快速下落
+                while (true) {
+                    if (!moveBottom())
+                        break
+                }
+            }
         }
     }
 
@@ -177,15 +186,6 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
         when (id) {
             R.id.btnStart -> {
                 startGame()
-                return true
-            }
-            R.id.btnDown -> {
-                if (isPause || isOver) return true
-                // 快速下落
-                while (true) {
-                    if (!moveBottom())
-                        break
-                }
                 return true
             }
         }
@@ -256,7 +256,9 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
         }
         isPause = false
         isOver = false
+        isStart = true
         maps = Array(10) { Array(20, { false }) }
+        currentScore = 0
         newBoxes()
     }
 
@@ -277,6 +279,7 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
         }
         newBoxes()
         isOver = checkOver()
+        isStart = if (isOver) false else isStart
         return false
     }
 
@@ -356,6 +359,7 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
      * 移动
      */
     private fun move(x: Int, y: Int): Boolean {
+        if (boxes == null) return false
         boxes!!
                 .filter { checkBoundary(it.x + x, it.y + y) }
                 .forEach { return false }
@@ -370,6 +374,7 @@ class MainPresenter(mView: MainActivity) : MainContract.Presenter {
      * 旋转
      */
     private fun rotate(): Boolean {
+        if (boxes == null) return false
         if (boxType == 0) return false
         boxes!!
                 .filter {

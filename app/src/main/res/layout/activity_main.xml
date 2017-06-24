@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.bbbond.tetris.MainActivity">
 
     <LinearLayout
@@ -20,7 +21,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
             android:layout_marginLeft="5dp"
             android:orientation="vertical">
 
@@ -94,36 +94,111 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnLeft"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/left" />
+            android:layout_margin="2dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnUp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#10000000">
+
+                    <TextView
+                        android:id="@+id/btnLeft"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/left" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="#10000000">
+
+                    <TextView
+                        android:id="@+id/btnRight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/right" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:background="#10000000">
+
+                <TextView
+                    android:id="@+id/btnDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/down" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1"
-            android:text="@string/up" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnDown"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/down" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#10000000">
 
-        <Button
-            android:id="@+id/btnRight"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/right" />
+                <TextView
+                    android:id="@+id/btnUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/change" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:background="#10000000">
+
+                <TextView
+                    android:id="@+id/btnFastDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/fast_down" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

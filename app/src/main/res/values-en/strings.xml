@@ -11,4 +11,8 @@
     <string name="game_over">GAME OVER</string>
     <string name="long_press_to_start">Long press to Start</string>
     <string name="next">NEXT</string>
+    <string name="max_score">MAX</string>
+    <string name="current_score">Current</string>
+    <string name="change">CHANGE</string>
+    <string name="fast_down">FAST DOWN</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import com.bbbond.tetris.contract.MainContract
 import com.bbbond.tetris.presenter.MainPresenter
@@ -134,14 +135,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
      * 初始化事件
      */
     private fun initListener() {
-        btnDown.setOnClickListener(this)
-        btnLeft.setOnClickListener(this)
-        btnRight.setOnClickListener(this)
-        btnUp.setOnClickListener(this)
-        btnStart.setOnClickListener(this)
-        btnPause.setOnClickListener(this)
-        btnStart.setOnLongClickListener(this)
-        btnDown.setOnLongClickListener(this)
+        (btnDown as TextView).setOnClickListener(this)
+        (btnLeft as TextView).setOnClickListener(this)
+        (btnRight as TextView).setOnClickListener(this)
+        (btnUp as TextView).setOnClickListener(this)
+        (btnStart as TextView).setOnClickListener(this)
+        (btnPause as TextView).setOnClickListener(this)
+        (btnFastDown as TextView).setOnClickListener(this)
+        (btnStart as TextView).setOnLongClickListener(this)
     }
 
     override fun onClick(v: View?) {

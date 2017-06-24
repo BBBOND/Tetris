@@ -12,4 +12,6 @@
     <string name="next">下一块</string>
     <string name="max_score">最高分数</string>
     <string name="current_score">当前分数</string>
+    <string name="change">变换</string>
+    <string name="fast_down">快速下落</string>
 </resources>
